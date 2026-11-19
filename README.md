@@ -36,7 +36,7 @@ The following example uses an **Abarth 500e Convertible**. The driver has **25% 
 
 Open **Planner**, choose a charging site, select **CNN–BiLSTM–Attention**, and click **Run forecast**. Leave **Origin** empty to use a historical example.
 
-![Site demand forecast](screenshots/01-forecast.png)
+![Site demand forecast](docs/screenshots/01-forecast.png)
 
 The model reads the previous **168 hours**, or seven days, and predicts the next **24 hourly energy values**. Each point represents the energy delivered by the whole charging site during one hour. The measured line shows what actually happened on that historical day.
 
@@ -44,7 +44,7 @@ The model reads the previous **168 hours**, or seven days, and predicts the next
 
 Click **View hourly data (UTC)** below the chart.
 
-![Hourly forecast and measured energy table](screenshots/02-hourly-data.png)
+![Hourly forecast and measured energy table](docs/screenshots/02-hourly-data.png)
 
 Each row shows the time, predicted energy, and measured energy in **kilowatt-hours (kWh)**. A dash means the historical measurement was unavailable.
 
@@ -62,7 +62,7 @@ Choose **Abarth 500e Convertible** and enter these values:
 | Onboard AC limit | 11 kW | Assumed maximum AC power the car can accept |
 | Site limit | 100 kW | Assumed capacity shared by the site and the planned charge |
 
-![Vehicle selection and charging inputs](screenshots/03-vehicle.png)
+![Vehicle selection and charging inputs](docs/screenshots/03-vehicle.png)
 
 **SOC** means **state of charge**, or battery percentage. The selected car has a **37.8 kWh** battery. Raising it from 25% to 45% adds 20 percentage points, so the battery needs `37.8 × 0.20 = 7.56 kWh`. At 90% efficiency, the charger must supply `7.56 ÷ 0.90 = 8.40 kWh`.
 
@@ -70,7 +70,7 @@ Choose **Abarth 500e Convertible** and enter these values:
 
 Click **Optimize charging**.
 
-![Optimized charging schedule](screenshots/04-schedule.png)
+![Optimized charging schedule](docs/screenshots/04-schedule.png)
 
 The planner assigns energy to individual hours. It considers electricity rates, predicted site demand, charging limits, and the departure deadline. Compare **Plan cost** with **Charge ASAP** to see how the recommended schedule compares with charging as early as possible.
 
@@ -80,7 +80,7 @@ If the target cannot be reached, the app shows the achievable battery percentage
 
 Click **Compare charging sites** below the schedule.
 
-![Charging-site comparison](screenshots/05-site-comparison.png)
+![Charging-site comparison](docs/screenshots/05-site-comparison.png)
 
 The app evaluates eligible sites using the same car, departure time, tariff, and capacity assumptions. Sites where the car can reach its target appear first. Among feasible plans, the ranking considers cost and the selected preference for avoiding congestion.
 
@@ -88,7 +88,7 @@ The app evaluates eligible sites using the same car, departure time, tariff, and
 
 Click **Create digital twin**, then **Start simulation**.
 
-![Digital twin before charging](screenshots/06-twin.png)
+![Digital twin before charging](docs/screenshots/06-twin.png)
 
 A digital twin is a software representation of the car’s battery. It starts at the chosen battery percentage and follows the saved schedule. Each simulation step represents one charging hour. Socket.IO updates the dashboard as the battery state changes.
 
@@ -96,7 +96,7 @@ A digital twin is a software representation of the car’s battery. It starts at
 
 After the simulation reaches departure, expand **Station meter receipts**.
 
-![Station meter receipts and final battery charge](screenshots/07-meter.png)
+![Station meter receipts and final battery charge](docs/screenshots/07-meter.png)
 
 The virtual charger sends a meter reading through an OCPP gateway after each slot. The readings are **cumulative**. In this example, the final reading is **8.40 kWh** and the battery reaches **45%**. This matches the calculation in step 3.
 
@@ -104,7 +104,7 @@ The virtual charger sends a meter reading through an OCPP gateway after each slo
 
 After departure, enter **25 km** and click **Simulate drive**.
 
-![Battery state after a simulated drive](screenshots/08-drive.png)
+![Battery state after a simulated drive](docs/screenshots/08-drive.png)
 
 The catalogue gives this car an energy consumption of **156 Wh/km**. A 25 km drive uses `25 × 156 = 3,900 Wh`, or **3.90 kWh**. The dashboard updates the battery percentage and estimated remaining range.
 
@@ -112,7 +112,7 @@ The catalogue gives this car an energy consumption of **156 Wh/km**. A 25 km dri
 
 Open **Model results**.
 
-![Forecast benchmark for all three models](screenshots/09-benchmark.png)
+![Forecast benchmark for all three models](docs/screenshots/09-benchmark.png)
 
 The benchmark compares each model’s forecast with actual measurements from dates held out for testing. **MAE** gives the average size of a prediction error. **RMSE** gives large errors more weight. Lower values are better for both metrics.
 
@@ -120,7 +120,7 @@ The benchmark compares each model’s forecast with actual measurements from dat
 
 Scroll to **Training and validation loss**.
 
-![Training and validation loss by epoch](screenshots/10-loss.png)
+![Training and validation loss by epoch](docs/screenshots/10-loss.png)
 
 An **epoch** is one pass through the training examples. The curves show how the error changed as the networks learned. The saved LSTM checkpoint comes from epoch **10**. The hybrid trained for **9** epochs and its best checkpoint came from epoch **6**.
 
@@ -128,7 +128,7 @@ An **epoch** is one pass through the training examples. The curves show how the 
 
 Scroll to **Dataset coverage**.
 
-![Measured and unmeasured hours by charging site](screenshots/11-coverage.png)
+![Measured and unmeasured hours by charging site](docs/screenshots/11-coverage.png)
 
 This table shows how many hours had energy measurements at each site. A measured zero means zero energy was recorded. An unmeasured hour means the actual energy is unknown. Only measured targets contribute to the benchmark scores.
 
@@ -136,7 +136,7 @@ This table shows how many hours had energy measurements at each site. A measured
 
 Return to **Planner**, expand **Save vehicle preference**, enter a profile name, and click **Save profile**.
 
-![Saving a vehicle preference](screenshots/12-profile.png)
+![Saving a vehicle preference](docs/screenshots/12-profile.png)
 
 The application remembers the selected vehicle for the current browser workspace.
 
@@ -144,7 +144,7 @@ The application remembers the selected vehicle for the current browser workspace
 
 Open **Saved plans** and click the vehicle row.
 
-![Saved charging plans](screenshots/13-saved-plans.png)
+![Saved charging plans](docs/screenshots/13-saved-plans.png)
 
 MongoDB restores the saved forecast, charging schedule, and latest simulation state. If the car completed a simulated drive, the reopened session shows the updated battery state.
 
