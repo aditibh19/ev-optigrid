@@ -1,0 +1,18 @@
+{
+  "filesFound": 85877,
+  "filesProcessed": 85870,
+  "filesFailed": 7,
+  "intervalsProcessed": 288618248,
+  "intervalsSkipped": 160081049,
+  "hourlyRows": 104995,
+  "sites": [
+    "caltech/California_Garage_01",
+    "caltech/California_Garage_02",
+    "caltech/LIGO_01",
+    "caltech/N_Wilson_Garage_01",
+    "caltech/S_Wilson_Garage_01",
+    "jpl/Arroyo_Garage_01",
+    "office_01/Parking_Lot_01"
+  ],
+  "dataWarning": "Zero energy without observed measurements does not prove actual zero demand."
+}

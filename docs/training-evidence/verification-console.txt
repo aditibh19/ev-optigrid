@@ -1,0 +1,66 @@
+data/acn_hourly_load.csv: OK
+data/ev_specifications.csv: OK
+data/acn_data_quality.json: OK
+ml/artifacts/data-quality.json: OK
+ml/artifacts/hybrid.bin: OK
+ml/artifacts/hybrid.json: OK
+ml/artifacts/lstm.bin: OK
+ml/artifacts/lstm.json: OK
+ml/artifacts/metrics.json: OK
+ml/artifacts/training.json: OK
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> ev-optigrid-2.0@1.0.0 build
+> vite build frontend
+
+vite v7.3.8 building client environment for production...
+transforming...
+✓ 56 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.40 kB │ gzip:  0.29 kB
+dist/assets/index-BOcahCUn.css    5.54 kB │ gzip:  1.90 kB
+dist/assets/index-C_hFEN-l.js   284.30 kB │ gzip: 88.27 kB
+✓ built in 1.58s
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> ev-optigrid-2.0@1.0.0 test
+> node --test tests/*.test.js
+
+✔ real MongoDB, TensorFlow inference, scoping, live events and restart persistence (1434.091924ms)
+✔ preserves source counts, schema, missingness and valid catalogue vehicles (0.773601ms)
+✔ targets fit only in their chronological partition and features ignore future data (71.709335ms)
+✔ linear optimizer uses cheapest available slots with partial charging, and respects power (0.881262ms)
+✔ reports infeasible, incompatible and invalid inputs (0.771727ms)
+✔ twin simulates conservation, stop at departure, driving and battery depletion (0.594041ms)
+✔ virtual charger exchanges OCPP frames over loopback WebSocket (28.18342ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1906.727458
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> ev-optigrid-2.0@1.0.0 test:e2e
+> playwright test
+
+[WebServer] (node:163) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:179) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/planner.spec.js:2:1 › dashboard generates forecast, optimizes, simulates, and reopens a saved plan (4.8s)
+
+  1 passed (6.2s)
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> ev-optigrid-2.0@1.0.0 demo:charger
+> node simulator/ocppDemo.js
+
+Virtual charger and loopback gateway exchanged [ 'BootNotification', 'Heartbeat', 'StatusNotification' ]
+Compose YAML parses and app, health dependency and volume are present

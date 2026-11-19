@@ -1,0 +1,11 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> ev-optigrid-2.0@1.0.0 evaluate
+> node ml/evaluate.js
+
+seasonal val { n: 58831, mae: 9.520354827516996, rmse: 29.82788110179804 }
+seasonal test { n: 57679, mae: 9.423912211298244, rmse: 67.0981258915701 }
+lstm val { n: 58831, mae: 8.027892377835313, rmse: 24.623998261431538 }
+lstm test { n: 57679, mae: 8.275538782810637, rmse: 63.26525063447839 }
+hybrid val { n: 58831, mae: 8.405828736471564, rmse: 24.767258023426717 }
+hybrid test { n: 57679, mae: 8.481370080834324, rmse: 63.19862734506896 }

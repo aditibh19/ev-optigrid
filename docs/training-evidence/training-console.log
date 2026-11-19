@@ -1,0 +1,34 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+(node:19) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+2026-11-19 14:55:36.590097: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-19 14:55:36.712255: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Training setup { runtime: 'native', train: 17129, val: 921, epochs: 10, stride: 4 }
+(node:19) [DEP0051] DeprecationWarning: The `util.isNullOrUndefined` API is deprecated. Please use `arg === null || arg === undefined` instead.
+(node:19) [DEP0044] DeprecationWarning: The `util.isArray` API is deprecated. Please use `Array.isArray()` instead.
+lstm { epoch: 1, loss: 0.7323306202888489, valLoss: 2.0377235412597656 }
+lstm { epoch: 2, loss: 0.5971888303756714, valLoss: 1.9524147510528564 }
+lstm { epoch: 3, loss: 0.5523487329483032, valLoss: 1.915758728981018 }
+lstm { epoch: 4, loss: 0.5392659902572632, valLoss: 1.9054949283599854 }
+lstm { epoch: 5, loss: 0.5311473608016968, valLoss: 1.8952635526657104 }
+lstm { epoch: 6, loss: 0.5201848149299622, valLoss: 1.9039357900619507 }
+lstm { epoch: 7, loss: 0.507763683795929, valLoss: 1.8945693969726562 }
+lstm { epoch: 8, loss: 0.4999433159828186, valLoss: 1.8902651071548462 }
+lstm { epoch: 9, loss: 0.49612948298454285, valLoss: 1.887699007987976 }
+lstm { epoch: 10, loss: 0.49224114418029785, valLoss: 1.882804274559021 }
+hybrid { epoch: 1, loss: 0.6989293694496155, valLoss: 2.053205728530884 }
+hybrid { epoch: 2, loss: 0.6307981014251709, valLoss: 2.023604154586792 }
+hybrid { epoch: 3, loss: 0.5866231918334961, valLoss: 1.9610059261322021 }
+hybrid { epoch: 4, loss: 0.5261653661727905, valLoss: 1.9174480438232422 }
+hybrid { epoch: 5, loss: 0.49667930603027344, valLoss: 1.9077141284942627 }
+hybrid { epoch: 6, loss: 0.49195796251296997, valLoss: 1.9017863273620605 }
+hybrid { epoch: 7, loss: 0.48457688093185425, valLoss: 1.9037508964538574 }
+hybrid { epoch: 8, loss: 0.4752975106239319, valLoss: 1.9043750762939453 }
+hybrid { epoch: 9, loss: 0.4680456221103668, valLoss: 1.912595272064209 }
+seasonal val { n: 58831, mae: 9.520354827516996, rmse: 29.82788110179804 }
+seasonal test { n: 57679, mae: 9.423912211298244, rmse: 67.0981258915701 }
+lstm val { n: 58831, mae: 8.027892439773861, rmse: 24.623998248158127 }
+lstm test { n: 57679, mae: 8.275538899487799, rmse: 63.26525065965406 }
+hybrid val { n: 58831, mae: 8.405828767362992, rmse: 24.76725803555001 }
+hybrid test { n: 57679, mae: 8.481370084186782, rmse: 63.19862734988816 }
